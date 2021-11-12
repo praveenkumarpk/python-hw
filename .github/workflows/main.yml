@@ -20,7 +20,7 @@ jobs:
         with:
           image: maskmafia/pycicd
           tags: v1
-          registry: https://hub.docker.com/
+          registry: docker.io
           dockerfile: Dockerfile
           username: ${{secrets.DOCKER_UNAME}}
           password: $((secrets.DOCKER_PWD}}
