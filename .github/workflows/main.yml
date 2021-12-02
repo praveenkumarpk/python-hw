@@ -18,6 +18,7 @@ jobs:
       - name: Checkout script
         run: |
           ls -a
+          date +%H:%M
           ./bin/time_validation.sh
           echo ${{ job.status }} 
   build:
