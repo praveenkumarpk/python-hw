@@ -3,20 +3,27 @@ name: CI
 
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
-  #push:
-  #  branches: [ master ]
+  push:
+    branches: [ master ]
   #pull_request:
   #  branches: [ master ]
-  schedule:
-    - cron: '*/8 * * * *'
+#  schedule:
+#    - cron: '*/8 * * * *'
 
 jobs:
-  build:
+  gate-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Checkout script
-        run: ls -a
+        run: |
+          ls -a
+          ./bin/time_validation.sh
+          echo ${{ job.status }} 
+  build:
+     needs: gate-check
+     runs-on: ubuntu:latest
+    steps:
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
