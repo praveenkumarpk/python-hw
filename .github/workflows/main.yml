@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Checkout script
-        run: ls -l
+        run: ls -a
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
