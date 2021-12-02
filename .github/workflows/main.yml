@@ -23,13 +23,13 @@ jobs:
   build:
      needs: gate-check
      runs-on: ubuntu:latest
-    steps:
-      - name: Build & push Docker image
-        uses: mr-smithers-excellent/docker-build-push@v5
-        with:
-          image: maskmafia/pycicd
-          tags: v1, latest
-          registry: docker.io
-          dockerfile: Dockerfile
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+     steps:
+       - name: Build & push Docker image
+         uses: mr-smithers-excellent/docker-build-push@v5
+         with:
+           image: maskmafia/pycicd
+           tags: v1, latest
+           registry: docker.io
+           dockerfile: Dockerfile
+           username: ${{ secrets.DOCKER_USERNAME }}
+           password: ${{ secrets.DOCKER_PASSWORD }}
