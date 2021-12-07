@@ -22,7 +22,7 @@ on:
 #          ./bin/time_validation.sh
 #          echo ${{ job.status }} 
   build:
-     needs: gate-check
+#     needs: gate-check
      runs-on: ubuntu:latest
      steps:
        - name: Build & push Docker image
