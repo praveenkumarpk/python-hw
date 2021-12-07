@@ -10,14 +10,14 @@ on:
 #  schedule:
 #    - cron: '*/8 * * * *'
 
-jobs:
-  gate-check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Checkout script
-        run: |
-          ls -a
+#jobs:
+#  gate-check:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      - name: Checkout script
+#        run: |
+#          ls -a
 #          date +%H:%M
 #          ./bin/time_validation.sh
 #          echo ${{ job.status }} 
