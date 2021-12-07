@@ -10,7 +10,7 @@ on:
 #  schedule:
 #    - cron: '*/8 * * * *'
 
-#jobs:
+jobs:
 #  gate-check:
 #    runs-on: ubuntu-latest
 #    steps:
